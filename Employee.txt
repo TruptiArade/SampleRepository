@@ -1,1 +1,104 @@
-Hello Employee
+/* Hello Employee */
+
+
+import java.util.*;
+import java.util.stream.*;
+
+class Employee
+{
+    String name;
+    int salary;
+    
+    Employee(String name, int salary)
+    {
+        this.name=name;
+        this.salary=salary;
+    }
+    
+    @Override
+    public String toString() 
+    {
+        return "Employee{name='" + name + "', salary=" + salary + "}";
+    }
+}
+public class Main
+{
+	public static void main(String[] args) 
+	{
+        List<Employee> liemp = List.of(
+            new Employee("Trupti",800000),
+            new Employee("Ayesha",1000000),
+            new Employee("Teju",1500000),
+            new Employee("Harshada",300000)
+            );
+            
+            for(Employee emp : liemp)
+            {
+                 System.out.println(emp); 
+            }
+            
+             int totalsalary = liemp.stream().
+                              mapToInt(e->e.salary).
+                              sum();
+                             
+                              
+             int maxsalary  = liemp.stream().
+                             mapToInt(e->e.salary).
+                             max()
+                             .orElse(0);
+                             
+             int minsalary  = liemp.stream().
+                              mapToInt(e->e.salary).
+                              min()
+                              .orElse(0);
+                             
+             double average =liemp.stream().
+                             mapToInt(e->e.salary).
+                             average()
+                             .orElse(0);
+                            
+             long count      =liemp.stream().
+                             mapToInt(e->e.salary).
+                             count();
+                             
+                             
+             int secondhighestsalary  =liemp.stream().
+                                 mapToInt(e->e.salary).
+                                 distinct().
+                                 boxed().
+                                 sorted(Comparator.reverseOrder()).
+                                 skip(1).
+                                 mapToInt(Integer::intValue)
+                                .findFirst()
+                                .orElse(0);
+                                
+            Optional<String> firstname = liemp.stream()
+                                         .map(e -> e.name) // extract just the names (String)
+                                         .filter(name -> name.startsWith("T"))
+                                         .findFirst();
+                                        
+           List<String> namesStartingWithT = liemp.stream()
+                                             .map(e -> e.name)
+                                             .filter(name -> name.startsWith("T"))
+                                             .collect(Collectors.toList()); 
+                                             
+
+                                
+            System.out.println("Total salary:"+totalsalary);
+            System.out.println("Max salary:"+maxsalary);
+            System.out.println("Min salary:"+minsalary);
+            System.out.println("Average salary:"+average);
+            System.out.println("Employee count:"+count);
+            System.out.println("Second highest salary:"+secondhighestsalary);
+            System.out.println("Searching operation firstname:"+firstname);
+            System.out.println("Searching Data:"+namesStartingWithT);
+    }
+}
+
+/*
+mapToInt(e -> e.salary): Extract salaries.
+distinct(): Remove duplicates.
+boxed(): Convert IntStream to Stream<Integer> so we can use Comparator.
+sorted(Comparator.reverseOrder()): Sort descending.
+skip(1): Skip the highest.
+findFirst(): Get the second highest.*/
