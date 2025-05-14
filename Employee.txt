@@ -84,14 +84,7 @@ public class Main
                                              
 
                                 
-            System.out.println("Total salary:"+totalsalary);
-            System.out.println("Max salary:"+maxsalary);
-            System.out.println("Min salary:"+minsalary);
-            System.out.println("Average salary:"+average);
-            System.out.println("Employee count:"+count);
-            System.out.println("Second highest salary:"+secondhighestsalary);
-            System.out.println("Searching operation firstname:"+firstname);
-            System.out.println("Searching Data:"+namesStartingWithT);
+          
     }
 }
 
