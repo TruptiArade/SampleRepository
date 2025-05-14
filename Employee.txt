@@ -1,6 +1,12 @@
-/* Hello Employee */
+82% of storage used … If you run out of space, you can't save to Drive or back up Google Photos. Get 30 GB of storage for ₹59.00 ₹15.00/month for 2 months.
+/******************************************************************************
 
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
 
+*******************************************************************************/
 import java.util.*;
 import java.util.stream.*;
 
@@ -84,7 +90,14 @@ public class Main
                                              
 
                                 
-          
+            System.out.println("Total salary:"+totalsalary);
+            System.out.println("Max salary:"+maxsalary);
+            System.out.println("Min salary:"+minsalary);
+            System.out.println("Average salary:"+average);
+            System.out.println("Employee count:"+count);
+            System.out.println("Second highest salary:"+secondhighestsalary);
+            System.out.println("Searching operation firstname:"+firstname);
+            System.out.println("Searching Data:"+namesStartingWithT);
     }
 }
 
